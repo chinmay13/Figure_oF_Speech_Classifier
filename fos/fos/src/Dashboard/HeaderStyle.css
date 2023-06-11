@@ -1,0 +1,118 @@
+.animate_header {
+  /* transform-style: preserve-3d; */
+  /* position: relative; */
+  /* animation: move 20s ease-out;
+  animation-iteration-count: 2;
+  animation-direction: alternate; */
+  /* animation: fall 1s forwards; */
+  position: relative;
+  animation: move-text-color 0.75s forwards;
+  bottom: -1em;
+  opacity: 0;
+  width: 100%;
+  z-index: 15;
+}
+
+.header_content {
+  /* position: absolute; */
+  padding-top: 4rem;
+  height: 120px;
+  font-size: 50px;
+  overflow: hidden;
+  z-index: 5;
+  font-family: "Comic Sans MS" !important;
+}
+
+@keyframes move {
+  from {
+    left: 0%;
+  }
+  to {
+    left: calc(100% - 39rem);
+  }
+}
+
+@keyframes breakandmove {
+  0% {
+    transform: rotateZ(10deg);
+    left: 0%;
+  }
+
+  70% {
+    left: calc(100% - 39rem);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.falling-letters span {
+  display: inline-block;
+  animation: fall 1s forwards;
+  animation-delay: calc(0.2s * var(--index));
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(100%);
+  }
+  90% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-text-color {
+  0% {
+    bottom: -0.2em;
+    opacity: 1;
+    color: #3e5c76;
+  }
+
+  50% {
+    bottom: 0.2em;
+    color: #ec058e;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+    color: #7209b7;
+  }
+}
+
+h1 {
+  font-size: 3.5em !important;
+  text-align: center;
+  font-weight: 600;
+  color: #cb3126;
+  font-family: "Comic Sans MS" !important;
+}
+
+h1 span span {
+  position: relative;
+  animation: move-text-color 0.75s forwards;
+  bottom: -1em;
+  opacity: 0;
+}
